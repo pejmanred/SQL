@@ -17,7 +17,7 @@ set @SQL=
 	) as BasseDate
 	Pivot(
 			count(FilmID) 
-			for CountryName in ('+@ColumnName+') --[China],[Japan],[France],[New Zealand],[Russia],[United Kingdom],[United States],[Germany]
+			for CountryName in ('+@ColumnName+')
 			)as PivotTable order by [film Year]  DESC'
 
 print @SQL
